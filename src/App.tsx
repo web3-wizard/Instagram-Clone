@@ -1,30 +1,18 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import FeedScreen from './screen/FeedScreen';
 
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import fonts from './theme/fonts';
-import colors from './theme/colors';
-
-const App = (): JSX.Element => {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.textStyle}>App</Text>
-      <Text>
-        <AntDesign name="home" size={26} color="blue" />
-      </Text>
+    <View style={styles.app}>
+      <FeedScreen />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: 10,
-    marginVertical: 5,
-  },
-  textStyle: {
-    color: colors.primary,
-    fontSize: fonts.sizes.xl,
-    fontWeight: 'bold',
+  app: {
+    flex: 1,
   },
 });
 
