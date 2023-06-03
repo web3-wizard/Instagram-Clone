@@ -8,8 +8,14 @@ import Feather from 'react-native-vector-icons/Feather';
 
 import fonts from '../../theme/fonts';
 import colors from '../../theme/colors';
+import Comment from './Comment';
+import {PostType} from '../../types';
 
-const Post = (): JSX.Element => {
+type PostPropType = {
+  post: PostType;
+};
+
+const Post = ({post}: PostPropType): JSX.Element => {
   const [isLiked, setIsLiked] = useState(false);
 
   return (
@@ -18,11 +24,11 @@ const Post = (): JSX.Element => {
       <View style={styles.header}>
         <Image
           source={{
-            uri: 'https://images.unsplash.com/photo-1533642974560-485588217279?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8Nnw1MzkwMTZ8fGVufDB8fHx8fA%3D%3D',
+            uri: post.user.image,
           }}
           style={styles.avator}
         />
-        <Text style={styles.username}> rahul_dey </Text>
+        <Text style={styles.username}> {post.user.username} </Text>
         <Entypo
           name="dots-three-horizontal"
           size={24}
@@ -34,7 +40,7 @@ const Post = (): JSX.Element => {
       {/* Content */}
       <Image
         source={{
-          uri: 'https://images.unsplash.com/photo-1446329813274-7c9036bd9a1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+          uri: post.image,
         }}
         style={styles.image}
       />
@@ -74,36 +80,39 @@ const Post = (): JSX.Element => {
         </View>
 
         {/* Likes text */}
-        <Text style={styles.text}>
-          Liked by <Text style={styles.boldText}> p_tarafdar </Text> and{' '}
-          <Text style={styles.boldText}> 66 others </Text>
-        </Text>
+        {post.nofLikes ? (
+          <Text style={styles.text}>
+            Liked by <Text style={styles.boldText}> p_tarafdar </Text> and{' '}
+            <Text style={styles.boldText}>
+              {' '}
+              {post.nofLikes?.toString()} others{' '}
+            </Text>
+          </Text>
+        ) : (
+          <Text>No Likes</Text>
+        )}
 
         {/* Post Description */}
         <Text style={styles.text}>
-          <Text style={styles.boldText}> rahul_dey </Text> Lorem ipsum dolor sit
-          amet, consectetur adipisicing elit. Dicta, omnis. Natus enim laborum
-          dolorem est. Assumenda explicabo saepe consequatur impedit laborum
-          minus laboriosam, laudantium sunt, aperiam ullam non repellat nostrum!
+          <Text style={styles.boldText}> {post.user.username} </Text>{' '}
+          {post.description}
         </Text>
 
         {/* Comments */}
-        <Text style={styles.greyText}>View all 16 comments</Text>
-        <View style={styles.comment}>
-          <Text style={[styles.text, styles.commentText]}>
-            <Text style={styles.boldText}> rahul_dey </Text> Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Numquam, rerum?
-          </Text>
-          <AntDesign
-            name="hearto"
-            size={12}
-            style={styles.icon}
-            color={colors.grey}
-          />
-        </View>
+        {post.comments.length > 0 ? (
+          <>
+            <Text style={styles.greyText}>
+              View all {post.nofComments?.toString()} comments
+            </Text>
+            {/* render frist comment */}
+            <Comment comment={post.comments[0]} />
+          </>
+        ) : (
+          <Text>No Comment</Text>
+        )}
 
         {/* Post Time */}
-        <Text style={styles.greyText}>19 December, 2021</Text>
+        <Text style={styles.greyText}>{post.createdAt}</Text>
       </View>
     </View>
   );
@@ -117,14 +126,6 @@ const styles = StyleSheet.create({
   },
   boldText: {
     fontWeight: fonts.weights.bold,
-  },
-  comment: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginHorizontal: 5,
-  },
-  commentText: {
-    flex: 1,
   },
   dotIcon: {
     marginLeft: 'auto',
