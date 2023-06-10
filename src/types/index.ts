@@ -12,7 +12,9 @@ export type CommentType = {
 export type PostType = {
   id: string;
   createdAt: string;
-  image: string;
+  image?: string;
+  images?: string[];
+  video?: string;
   description: string;
   user: UserType;
   nofComments?: Number;

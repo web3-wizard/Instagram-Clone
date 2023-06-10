@@ -11,12 +11,48 @@ import colors from '../../theme/colors';
 import Comment from './Comment';
 import {PostType} from '../../types';
 
+import DoublePressable from '../custom/DoublePressable';
+import Carousel from './Carousel';
+import VideoPlayer from './VideoPlayer';
+
 type PostPropType = {
   post: PostType;
 };
 
 const Post = ({post}: PostPropType): JSX.Element => {
   const [isLiked, setIsLiked] = useState(false);
+  const [isDescExpanded, setIsDescExpanded] = useState(false);
+
+  const toggleLike = () => {
+    setIsLiked(v => !v);
+  };
+
+  const toggleDesc = () => {
+    setIsDescExpanded(v => !v);
+  };
+
+  let content = null;
+  // set image to content
+  if (post.image) {
+    content = (
+      <DoublePressable onDoublePress={toggleLike}>
+        <Image
+          source={{
+            uri: post.image,
+          }}
+          style={styles.image}
+        />
+      </DoublePressable>
+    );
+  } else if (post.images) {
+    content = <Carousel images={post.images} onDoublePress={toggleLike} />;
+  } else if (post.video) {
+    content = (
+      <DoublePressable onDoublePress={toggleLike}>
+        <VideoPlayer uri={post.video} />
+      </DoublePressable>
+    );
+  }
 
   return (
     <View style={styles.post}>
@@ -38,23 +74,18 @@ const Post = ({post}: PostPropType): JSX.Element => {
       </View>
 
       {/* Content */}
-      <Image
-        source={{
-          uri: post.image,
-        }}
-        style={styles.image}
-      />
+      {content}
 
       {/* Footer */}
       <View style={styles.footer}>
         {/* Like Comment Share Icons  */}
         <View style={styles.iconContainer}>
-          <Pressable onPress={() => setIsLiked(!isLiked)}>
+          <Pressable onPress={toggleLike}>
             <AntDesign
               name={isLiked ? 'heart' : 'hearto'}
               size={24}
               style={styles.icon}
-              color={isLiked ? 'red' : colors.black}
+              color={isLiked ? colors.accent : colors.black}
             />
           </Pressable>
 
@@ -93,9 +124,12 @@ const Post = ({post}: PostPropType): JSX.Element => {
         )}
 
         {/* Post Description */}
-        <Text style={styles.text}>
+        <Text style={styles.text} numberOfLines={isDescExpanded ? 0 : 3}>
           <Text style={styles.boldText}> {post.user.username} </Text>{' '}
           {post.description}
+        </Text>
+        <Text onPress={toggleDesc} style={styles.greyText}>
+          {isDescExpanded ? 'show less' : 'show more'}
         </Text>
 
         {/* Comments */}
@@ -152,7 +186,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    aspectRatio: 4 / 3,
+    aspectRatio: 1,
   },
   post: {},
   username: {
