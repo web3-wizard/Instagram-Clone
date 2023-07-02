@@ -49,6 +49,7 @@ const CommentsScreen = () => {
           style={styles.input}
           value={inputText}
           onChangeText={e => setInputText(e)}
+          multiline={true}
         />
         <Text onPress={handlePost} style={styles.button}>
           Post
@@ -66,13 +67,14 @@ const styles = StyleSheet.create({
     fontWeight: fonts.weights.bold,
     position: 'absolute',
     right: 10,
+    bottom: 15,
   },
   container: {
     flex: 1,
   },
   footer: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     borderTopWidth: 0.9,
     borderTopColor: colors.border,
     padding: 5,

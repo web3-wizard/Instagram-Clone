@@ -1,177 +1,160 @@
 [
   {
-    "id": "1",
-    "createdAt": "10 June 2022",
-    "video": "https://insta-stories-viewer.com/img.php?url=kwWMnJr7AiXRxhQmmIwckX6NW8t1a0QwqWVTv3nc%2BX6XTYgEDsSFyz7cqxxd%2BgiqKo%2ByAJr6BqrYkEYdly3kpKyD08PXsVvyjp9LCY7vAEMQnONNjWArWbE2bhYA4NYg0BM7HNDumzP0wNDU0A5DxKLW1rcvJkcgk6cuKg41R7n6W8NLhynz3wzWp%2FR8gbyLNW8sSD0jPnUtkQKXP3LIDTM4FagN8tQPgaxUqsCQA54%2BJZhI80OFYyMOOL83Ht8K39Coj9u6Wx0cmOAKkFJi5jaZV2hRZyG80vBw5owBPVSzerZ6fdwHIfByL%2BOmEwswiZz2qF5CfYO1XvYCsqdrubpEXJH71BDPeQrToc8Hnv8BmeHl9p9iJQAuIkW3DVxGrW44McvC2lz7A9223v9O5A%3D%3D",
-    "description": "Lorem ipsum dolor sit amet, consectetur im laborum dolorem est. Assumenda explicabo saepe consequatur impedit laborum minus laboriosam, laudantium sunt, aperiam ullam non repellat !",
+    "id": "video",
+    "createdAt": "19 December 2021",
+    "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
     "user": {
-      "username": "dey_rahul",
-      "image": "https://unsplash.com/photos/xua0NYSuTF4/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjg1ODA2MjY3fA&force=true&w=640"
+      "id": "u1",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg",
+      "username": "random_user"
     },
     "nofComments": 11,
-    "nofLikes": 33,
+    "nofLikes": 34,
     "comments": [
       {
         "id": "1",
-        "comment": "Hello there",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
         "user": {
-          "username": "p_tarafder"
+          "id": "u1",
+          "username": "vadimnotjustdev"
         }
       },
       {
         "id": "2",
-        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
         "user": {
-          "username": "unknown_55"
+          "id": "u1",
+          "username": "vadimnotjustdev"
+        }
+      }
+    ]
+  },
+  {
+    "id": "1",
+    "createdAt": "19 December 2021",
+    "images": [
+      "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg",
+      "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/2.jpg",
+      "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/3.jpg",
+      "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg"
+    ],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
+    "user": {
+      "id": "u1",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg",
+      "username": "vadimnotjustdev"
+    },
+    "nofComments": 11,
+    "nofLikes": 34,
+    "comments": [
+      {
+        "id": "1",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "vadimnotjustdev"
+        }
+      },
+      {
+        "id": "2",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "vadimnotjustdev"
         }
       }
     ]
   },
   {
     "id": "2",
-    "createdAt": "16 July 2022",
-    "images": [
-      "https://source.unsplash.com/random/900x600?car",
-      "https://source.unsplash.com/random/?road",
-      "https://source.unsplash.com/random/?car",
-      "https://source.unsplash.com/random/?sea"
-    ],
-    "description": "Lorem ipsum dolor sit amet, consectetur im laborum dolorem est. Assumenda explicabo saepe consequatur impedit laborum minus laboriosam, laudantium sunt, aperiam ullam non repellat !",
+    "createdAt": "19 December 2021",
+    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/2.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
     "user": {
-      "username": "dey_rahul",
-      "image": "https://unsplash.com/photos/xua0NYSuTF4/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjg1ODA2MjY3fA&force=true&w=640"
+      "id": "u1",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/2.jpg",
+      "username": "vadimnotjustdev"
     },
-    "nofComments": 13,
-    "nofLikes": 26,
+    "nofComments": 11,
+    "nofLikes": 34,
     "comments": [
       {
         "id": "1",
-        "comment": "This is from unplash?",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
         "user": {
-          "username": "p_tarafder"
+          "id": "u1",
+          "username": "vadimnotjustdev"
         }
       },
       {
         "id": "2",
-        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
         "user": {
-          "username": "unknown_55"
+          "id": "u1",
+          "username": "vadimnotjustdev"
         }
       }
     ]
   },
   {
     "id": "3",
-    "createdAt": "12 Augest 2022",
-    "image": "https://source.unsplash.com/random/?winter",
-    "description": "Lorem ipsum dolor sit amet, consectetur im laborum dolorem est. Assumenda explicabo saepe consequatur impedit laborum minus laboriosam, laudantium sunt, aperiam ullam non repellat !",
+    "createdAt": "19 December 2021",
+    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/3.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
     "user": {
-      "username": "dey_rahul",
-      "image": "https://unsplash.com/photos/xua0NYSuTF4/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjg1ODA2MjY3fA&force=true&w=640"
+      "id": "u1",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/3.jpg",
+      "username": "vadimnotjustdev"
     },
-    "nofComments": 31,
-    "nofLikes": 74,
+    "nofComments": 11,
+    "nofLikes": 34,
     "comments": [
       {
         "id": "1",
-        "comment": "Amazing! Want to test ?",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
         "user": {
-          "username": "fruit_lover"
+          "id": "u1",
+          "username": "vadimnotjustdev"
         }
       },
       {
         "id": "2",
-        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
         "user": {
-          "username": "unknown_55"
+          "id": "u1",
+          "username": "vadimnotjustdev"
         }
       }
     ]
   },
   {
     "id": "4",
-    "createdAt": "21 Augest 2022",
-    "images": [
-      "https://source.unsplash.com/random/900x600?hill",
-      "https://source.unsplash.com/random/?hill",
-      "https://source.unsplash.com/random/?hilltown"
-    ],
-    "description": "Lorem ipsum dolor sit amet, consectetur im laborum dolorem est. Assumenda explicabo saepe consequatur impedit laborum minus laboriosam, laudantium sunt, aperiam ullam non repellat !",
+    "createdAt": "19 December 2021",
+    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
     "user": {
-      "username": "dey_rahul",
-      "image": "https://unsplash.com/photos/xua0NYSuTF4/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjg1ODA2MjY3fA&force=true&w=640"
+      "id": "u1",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/4.jpg",
+      "username": "vadimnotjustdev"
     },
-    "nofComments": 21,
-    "nofLikes": 72,
+    "nofComments": 11,
+    "nofLikes": 34,
     "comments": [
       {
         "id": "1",
-        "comment": "Amazing! Want to test ?",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
         "user": {
-          "username": "fruit_lover"
+          "id": "u1",
+          "username": "vadimnotjustdev"
         }
       },
       {
         "id": "2",
-        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
         "user": {
-          "username": "unknown_55"
-        }
-      }
-    ]
-  },
-  {
-    "id": "5",
-    "createdAt": "26 May 2022",
-    "image": "https://source.unsplash.com/random/?marriage",
-    "description": "Lorem ipsum dolor sit amet, consectetur im laborum dolorem est. Assumenda explicabo saepe consequatur impedit laborum minus laboriosam, laudantium sunt, aperiam ullam non repellat !",
-    "user": {
-      "username": "dey_rahul",
-      "image": "https://unsplash.com/photos/xua0NYSuTF4/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjg1ODA2MjY3fA&force=true&w=640"
-    },
-    "nofComments": 21,
-    "nofLikes": 72,
-    "comments": [
-      {
-        "id": "1",
-        "comment": "Congratulation! for your new life",
-        "user": {
-          "username": "random_32"
-        }
-      },
-      {
-        "id": "2",
-        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing.",
-        "user": {
-          "username": "unknown_55"
-        }
-      }
-    ]
-  },
-  {
-    "id": "6",
-    "createdAt": "18 May 2022",
-    "video": "https://insta-stories-viewer.com/img.php?url=kwWMnJr7AiXRxhQmmIwckelRzX0fuhZEDtp1Jj3bLA7xYLNsibSRiWfBCpN3rqCAbLMBbQaS4RuEZ5J8cjVa9sCXEylgg34lOJrVhmyA7V1tr7kuzs0YzEzPit5NqQybBp0kunArharVw0hy7VjVta3vNN1BeuNLPVbFMlL9vPyn9e4TjzErAQA0pBwAqHiphI1ISQJLvjNMErfVAZ%2Fk3DZckMmonA2cxk8RbdWh0xO%2F2PT3yu156xz59CF%2BlVjWvuTC6buPVJLkRbL2icsSdzWaAe%2Bdk1coi2y87kbo40igg4zfvagqFI3EukvWd%2BRVhWHVuPgGTQShdR7d4RzTG0rD8iIxJJpj2F5t6mFHA3WFb2haM1MaBoekAAFY2K%2FD91t2E2qvi5V%2FfEXqnjssag%3D%3D",
-    "description": "Lorem ipsum dolor sit amet, consectetur im laborum dolorem est. Assumenda explicabo saepe consequatur impedit laborum minus laboriosam, laudantium sunt, aperiam ullam non repellat !",
-    "user": {
-      "username": "dey_rahul",
-      "image": "https://unsplash.com/photos/xua0NYSuTF4/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjg1ODA2MjY3fA&force=true&w=640"
-    },
-    "nofComments": 21,
-    "nofLikes": 72,
-    "comments": [
-      {
-        "id": "1",
-        "comment": "wow!!!!!!!",
-        "user": {
-          "username": "random_lover"
-        }
-      },
-      {
-        "id": "2",
-        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing.",
-        "user": {
-          "username": "unknown_55"
+          "id": "u1",
+          "username": "vadimnotjustdev"
         }
       }
     ]
