@@ -1,30 +1,76 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TextInput} from 'react-native';
+import {useForm, Control, Controller} from 'react-hook-form';
 import user from '../assets/data/user.json';
 import colors from '../assets/theme/colors';
 import fonts from '../assets/theme/fonts';
+import {IUser} from '../../types';
+
+const URL_REGEX =
+  /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/i;
+
+type IEditableUserField = 'name' | 'username' | 'website' | 'bio';
+type IEditableUser = Pick<IUser, IEditableUserField>;
 
 interface ICustomInput {
+  control: Control<IEditableUser, object>;
+  name: IEditableUserField;
   label: string;
   multiline?: boolean;
+  rules?: object;
 }
 
-const CustomInput = ({label, multiline = false}: ICustomInput) => {
+const CustomInput = ({
+  control,
+  name,
+  label,
+  multiline = false,
+  rules = {},
+}: ICustomInput) => {
   return (
-    <View style={styles.inputContainer}>
-      <Text style={styles.label}>{label}</Text>
-      <TextInput
-        style={styles.input}
-        placeholder={label}
-        multiline={multiline}
-      />
-    </View>
+    <Controller
+      control={control}
+      name={name}
+      rules={rules}
+      render={({field: {value, onChange, onBlur}, fieldState: {error}}) => (
+        <View style={styles.inputContainer}>
+          <Text style={styles.label}>{label}</Text>
+          <View style={styles.errorContainer}>
+            <TextInput
+              value={value}
+              onChangeText={onChange}
+              onBlur={onBlur}
+              style={[
+                styles.input,
+                {borderColor: error ? colors.error : colors.border},
+              ]}
+              placeholder={label}
+              multiline={multiline}
+            />
+            {error && (
+              <Text style={styles.errorTxt}>
+                {error.message || 'Something went wrong!'}
+              </Text>
+            )}
+          </View>
+        </View>
+      )}
+    />
   );
 };
 
 const EditProfileScreen = () => {
-  const handleSubmit = () => {
-    console.warn('On Submit!');
+  const {control, handleSubmit} = useForm<IEditableUser>({
+    defaultValues: {
+      name: user.name,
+      username: user.username,
+      website: user.website,
+      bio: user.bio,
+    },
+  });
+
+  const onSubmit = (data: IEditableUser) => {
+    console.log('On Submit! ', data);
   };
 
   return (
@@ -32,12 +78,46 @@ const EditProfileScreen = () => {
       <Image source={{uri: user.image}} style={styles.avatar} />
       <Text style={styles.txtButton}>Change profile photo</Text>
 
-      <CustomInput label="Name" />
-      <CustomInput label="Username" />
-      <CustomInput label="Website" />
-      <CustomInput label="Bio" multiline={true} />
+      <CustomInput
+        control={control}
+        name="name"
+        label="Name"
+        rules={{
+          required: 'Name is required',
+          minLength: {value: 3, message: 'Name must be length 3'},
+        }}
+      />
+      <CustomInput
+        control={control}
+        name="username"
+        label="Username"
+        rules={{
+          required: 'Username is required',
+          minLength: {value: 3, message: 'Username must be length 3'},
+        }}
+      />
+      <CustomInput
+        control={control}
+        name="website"
+        label="Website"
+        rules={{
+          pattern: {value: URL_REGEX, message: 'Invalid url'},
+        }}
+      />
+      <CustomInput
+        control={control}
+        name="bio"
+        label="Bio"
+        multiline={true}
+        rules={{
+          maxLength: {
+            value: 200,
+            message: 'Bio should be less than 200 character',
+          },
+        }}
+      />
 
-      <Text onPress={handleSubmit} style={styles.txtButton}>
+      <Text onPress={handleSubmit(onSubmit)} style={styles.txtButton}>
         Submit
       </Text>
     </View>
@@ -51,6 +131,13 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     marginTop: 25,
   },
+  errorContainer: {
+    flex: 1,
+  },
+  errorTxt: {
+    fontSize: fonts.sizes.md,
+    color: colors.error,
+  },
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -59,8 +146,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
   },
   input: {
-    flex: 1,
-    borderColor: colors.border,
     borderBottomWidth: 1,
   },
   label: {

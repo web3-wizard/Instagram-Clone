@@ -1,7 +1,13 @@
-export type UserType = {
+export type IUser = {
+  id: string;
+  name: string;
   username: string;
   image?: string;
+  website?: string;
+  bio?: string;
 };
+
+export type UserType = Pick<IUser, 'username' | 'image'>;
 
 export type CommentType = {
   id: string;
