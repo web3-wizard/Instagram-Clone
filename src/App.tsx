@@ -3,14 +3,12 @@ import {StyleSheet, View} from 'react-native';
 
 import colors from './assets/theme/colors';
 
-// import FeedScreen from './screen/FeedScreen';
-import ProfileScreen from './screen/ProfileScreen';
-// import CommentsScreen from './screen/CommentsScreen';
+import EditProfileScreen from './screen/EditProfileScreen';
 
 const App = () => {
   return (
     <View style={styles.app}>
-      <ProfileScreen />
+      <EditProfileScreen />
     </View>
   );
 };

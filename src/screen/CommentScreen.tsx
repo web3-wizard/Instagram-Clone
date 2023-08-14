@@ -14,7 +14,7 @@ import Comment from '../components/comment/Comment';
 import colors from '../assets/theme/colors';
 import fonts from '../assets/theme/fonts';
 
-const CommentsScreen = () => {
+const CommentScreen = () => {
   const [inputText, setInputText] = useState('');
   const handlePost = () => {
     if (inputText.trim()) {
@@ -98,4 +98,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CommentsScreen;
+export default CommentScreen;
