@@ -1,8 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-
 import colors from './assets/theme/colors';
-
 import EditProfileScreen from './screen/EditProfileScreen';
 
 const App = () => {
