@@ -21,3 +21,12 @@ export type PostType = {
   nofLikes?: Number;
   comments: CommentType[];
 };
+
+export type UserPostType = {
+  id: string;
+  createdAt: string;
+  image?: string;
+  images?: string[];
+  video?: string;
+  description: string;
+};
