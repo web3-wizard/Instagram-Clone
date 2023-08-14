@@ -6,10 +6,10 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
 
-import fonts from '../../theme/fonts';
-import colors from '../../theme/colors';
-import Comment from './Comment';
-import {PostType} from '../../types';
+import fonts from '../../assets/theme/fonts';
+import colors from '../../assets/theme/colors';
+import Comment from '../comment/Comment';
+import {PostType} from '../../../types';
 
 import DoublePressable from '../custom/DoublePressable';
 import Carousel from './Carousel';

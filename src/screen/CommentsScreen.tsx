@@ -10,9 +10,9 @@ import {
 } from 'react-native';
 
 import comments from '../assets/data/comments.json';
-import Comment from '../components/post/Comment';
-import colors from '../theme/colors';
-import fonts from '../theme/fonts';
+import Comment from '../components/comment/Comment';
+import colors from '../assets/theme/colors';
+import fonts from '../assets/theme/fonts';
 
 const CommentsScreen = () => {
   const [inputText, setInputText] = useState('');

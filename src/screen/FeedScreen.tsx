@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList} from 'react-native';
-import Post from '../components/post/Post';
+import Post from '../components/feed/Post';
 
 import posts from '../assets/data/posts.json';
 

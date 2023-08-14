@@ -10,8 +10,8 @@ import {
   Text,
 } from 'react-native';
 import DoublePressable from '../custom/DoublePressable';
-import colors from '../../theme/colors';
-import fonts from '../../theme/fonts';
+import colors from '../../assets/theme/colors';
+import fonts from '../../assets/theme/fonts';
 
 interface ICarousel {
   images: string[];

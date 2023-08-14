@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Video from 'react-native-video';
-import colors from '../../theme/colors';
+import colors from '../../assets/theme/colors';
 
 interface IVideoPlayer {
   uri: string;
