@@ -1,5 +1,5 @@
-import expo.modules.ReactActivityDelegateWrapper;
 package com.instagram;
+import expo.modules.ReactActivityDelegateWrapper;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

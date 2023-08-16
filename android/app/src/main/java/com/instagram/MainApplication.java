@@ -1,7 +1,8 @@
+package com.instagram;
+
 import android.content.res.Configuration;
 import expo.modules.ApplicationLifecycleDispatcher;
 import expo.modules.ReactNativeHostWrapper;
-package com.instagram;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
