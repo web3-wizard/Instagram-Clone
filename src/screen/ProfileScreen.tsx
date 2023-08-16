@@ -1,14 +1,18 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {useRoute, useNavigation, RouteProp} from '@react-navigation/native';
+import user from '../assets/data/user.json';
+import ProfileHeader from '../components/profile/ProfileHeader';
+import FeedGridView from '../components/feed/FeedGridView';
+import {RootStackParamList} from '../../types';
 
 const ProfileScreen = () => {
-  return (
-    <View>
-      <Text>ProfileScreen</Text>
-    </View>
-  );
+  const route = useRoute<RouteProp<RootStackParamList, 'UserProfile'>>();
+  const navigation = useNavigation();
+  const username =
+    route.params?.username === undefined ? 'My Profile' : route.params.username;
+  navigation.setOptions({title: username});
+
+  return <FeedGridView data={user.posts} ListHeaderComponent={ProfileHeader} />;
 };
 
 export default ProfileScreen;
-
-const styles = StyleSheet.create({});

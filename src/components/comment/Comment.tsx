@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import colors from '../../theme/colors';
-import fonts from '../../theme/fonts';
-import {CommentType} from '../../types';
+import colors from '../../assets/theme/colors';
+import fonts from '../../assets/theme/fonts';
+import {CommentType} from '../../../types';
 
 type CommentPropType = {
   comment: CommentType;

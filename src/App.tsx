@@ -1,16 +1,12 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-
-import colors from './theme/colors';
-
-// import CommentsScreen from './screen/CommentsScreen';
-// import FeedScreen from './screen/FeedScreen';
-import ProfileScreen from './screen/ProfileScreen';
+import colors from './assets/theme/colors';
+import Navigation from './navigation';
 
 const App = () => {
   return (
     <View style={styles.app}>
-      <ProfileScreen />
+      <Navigation />
     </View>
   );
 };
