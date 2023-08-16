@@ -38,6 +38,7 @@ export type UserPostType = {
 };
 
 export type RootStackParamList = {
+  Home: undefined;
   Feed: undefined;
   UserProfile: {username: string};
 };

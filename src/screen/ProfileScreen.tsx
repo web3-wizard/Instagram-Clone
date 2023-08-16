@@ -8,7 +8,8 @@ import {RootStackParamList} from '../../types';
 const ProfileScreen = () => {
   const route = useRoute<RouteProp<RootStackParamList, 'UserProfile'>>();
   const navigation = useNavigation();
-  const {username} = route.params;
+  const username =
+    route.params?.username === undefined ? 'My Profile' : route.params.username;
   navigation.setOptions({title: username});
 
   return <FeedGridView data={user.posts} ListHeaderComponent={ProfileHeader} />;

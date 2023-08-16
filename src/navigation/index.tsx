@@ -1,13 +1,12 @@
 import React from 'react';
-import {Image, StyleSheet} from 'react-native';
+
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import FeedScreen from '../screen/FeedScreen';
 import ProfileScreen from '../screen/ProfileScreen';
 
-import instagram from '../assets/images/instagram.png';
 import {RootStackParamList} from '../../types';
+import BottomTabNavigation from './BottomTabNavigation';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -15,13 +14,14 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Feed"
+        initialRouteName="Home"
         screenOptions={{headerShown: true}}>
         <Stack.Screen
-          name="Feed"
-          component={FeedScreen}
-          options={{headerTitle: FeedHeaderTitle, headerTitleAlign: 'center'}}
+          name="Home"
+          component={BottomTabNavigation}
+          options={{headerShown: false}}
         />
+
         <Stack.Screen
           name="UserProfile"
           component={ProfileScreen}
@@ -31,16 +31,5 @@ const Navigation = () => {
     </NavigationContainer>
   );
 };
-
-const FeedHeaderTitle = () => {
-  return <Image source={instagram} resizeMode="contain" style={styles.logo} />;
-};
-
-const styles = StyleSheet.create({
-  logo: {
-    width: 150,
-    height: 40,
-  },
-});
 
 export default Navigation;
