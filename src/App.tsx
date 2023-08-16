@@ -1,12 +1,13 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import colors from './assets/theme/colors';
-import PostUploadScreen from './screen/PostUploadScreen';
+
+import FeedScreen from './screen/FeedScreen';
 
 const App = () => {
   return (
     <View style={styles.app}>
-      <PostUploadScreen />
+      <FeedScreen />
     </View>
   );
 };
