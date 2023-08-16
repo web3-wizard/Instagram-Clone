@@ -1,13 +1,12 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import colors from './assets/theme/colors';
-
-import FeedScreen from './screen/FeedScreen';
+import Navigation from './navigation';
 
 const App = () => {
   return (
     <View style={styles.app}>
-      <FeedScreen />
+      <Navigation />
     </View>
   );
 };
