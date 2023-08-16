@@ -36,3 +36,8 @@ export type UserPostType = {
   video?: string;
   description: string;
 };
+
+export type RootStackParamList = {
+  Feed: undefined;
+  UserProfile: {username: string};
+};

@@ -15,6 +15,8 @@ import DoublePressable from '../custom/DoublePressable';
 import Carousel from './Carousel';
 import VideoPlayer from './VideoPlayer';
 
+import {useNavigation} from '@react-navigation/native';
+
 type PostPropType = {
   post: PostType;
 };
@@ -22,6 +24,12 @@ type PostPropType = {
 const Post = ({post}: PostPropType): JSX.Element => {
   const [isLiked, setIsLiked] = useState(false);
   const [isDescExpanded, setIsDescExpanded] = useState(false);
+
+  const navigation = useNavigation();
+
+  const navigateToUser = () => {
+    navigation.navigate('UserProfile', {username: post.user.username});
+  };
 
   const toggleLike = () => {
     setIsLiked(v => !v);
@@ -64,7 +72,10 @@ const Post = ({post}: PostPropType): JSX.Element => {
           }}
           style={styles.avator}
         />
-        <Text style={styles.username}> {post.user.username} </Text>
+        <Text onPress={navigateToUser} style={styles.username}>
+          {' '}
+          {post.user.username}{' '}
+        </Text>
         <Entypo
           name="dots-three-horizontal"
           size={24}

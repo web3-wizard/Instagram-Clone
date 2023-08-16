@@ -7,8 +7,9 @@ import FeedScreen from '../screen/FeedScreen';
 import ProfileScreen from '../screen/ProfileScreen';
 
 import instagram from '../assets/images/instagram.png';
+import {RootStackParamList} from '../../types';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const Navigation = () => {
   return (
