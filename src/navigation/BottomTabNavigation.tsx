@@ -1,10 +1,10 @@
 import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import ProfileScreen from '../screen/ProfileScreen';
 import CommentScreen from '../screen/CommentScreen';
 import PostUploadScreen from '../screen/PostUploadScreen';
 import EditProfileScreen from '../screen/EditProfileScreen';
+import ProfileStackNavigation from './ProfileStackNavigation';
 
 import FeedStackNavigation from './FeedStackNavigation';
 
@@ -73,8 +73,9 @@ const BottomTabNavigation = () => {
       />
       <Tab.Screen
         name="MyProfile"
-        component={ProfileScreen}
+        component={ProfileStackNavigation}
         options={{
+          headerShown: false,
           tabBarIcon: ({color, size}) => (
             <FontAwesome name="user-circle" size={size} color={color} />
           ),

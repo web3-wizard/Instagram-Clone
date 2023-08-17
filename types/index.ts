@@ -1,3 +1,4 @@
+// Posts
 export type IUser = {
   id: string;
   name: string;
@@ -37,15 +38,20 @@ export type UserPostType = {
   description: string;
 };
 
+// navigations
 export type RootStackParamList = {
   Home: undefined;
-  Feed: undefined;
-  UserProfile: {username: string};
+  Comments: {postId: string};
 };
 
 export type FeedStackParamList = {
   Feed: undefined;
   UserProfile: {username: string};
+};
+
+export type ProfileStackParamList = {
+  Profile: undefined;
+  EditProfile: undefined;
 };
 
 export type BottomTabParamList = {
