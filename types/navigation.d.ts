@@ -3,7 +3,8 @@ import {
   FeedStackParamList,
   BottomTabParamList,
   ProfileStackParamList,
-} from '.';
+  SearchTabParamList,
+} from './navigator';
 
 declare global {
   namespace ReactNavigation {
@@ -11,5 +12,6 @@ declare global {
     interface RootParamList extends FeedStackParamList {}
     interface RootParamList extends ProfileStackParamList {}
     interface RootParamList extends BottomTabParamList {}
+    interface RootParamList extends SearchTabParamList {}
   }
 }
