@@ -3,7 +3,7 @@ import React from 'react';
 import {LinkingOptions, NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {RootStackParamList} from '../../types';
+import {RootStackParamList} from '../../types/navigator';
 import BottomTabNavigation from './BottomTabNavigation';
 import CommentScreen from '../screen/CommentScreen';
 
