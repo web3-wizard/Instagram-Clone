@@ -1,18 +1,37 @@
 import React from 'react';
 
-import {NavigationContainer} from '@react-navigation/native';
+import {LinkingOptions, NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import ProfileScreen from '../screen/ProfileScreen';
-
-import {RootStackParamList} from '../../types';
+import {RootStackParamList} from '../../types/navigator';
 import BottomTabNavigation from './BottomTabNavigation';
+import CommentScreen from '../screen/CommentScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
+const Linking: LinkingOptions<RootStackParamList> = {
+  prefixes: ['rahulmakeit://'],
+  config: {
+    initialRouteName: 'Home',
+    screens: {
+      Comments: 'comments',
+      Home: {
+        screens: {
+          FeedStack: {
+            initialRouteName: 'Feed',
+            screens: {
+              UserProfile: 'user/:username',
+            },
+          },
+        },
+      },
+    },
+  },
+};
+
 const Navigation = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer linking={Linking}>
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{headerShown: true}}>
@@ -22,11 +41,7 @@ const Navigation = () => {
           options={{headerShown: false}}
         />
 
-        <Stack.Screen
-          name="UserProfile"
-          component={ProfileScreen}
-          options={{title: 'Profile'}}
-        />
+        <Stack.Screen name="Comments" component={CommentScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

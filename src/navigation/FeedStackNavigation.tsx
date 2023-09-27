@@ -5,7 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import ProfileScreen from '../screen/ProfileScreen';
 import FeedScreen from '../screen/FeedScreen';
 
-import {FeedStackParamList} from '../../types';
+import {FeedStackParamList} from '../../types/navigator';
 
 import instagram from '../assets/images/instagram.png';
 

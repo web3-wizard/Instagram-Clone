@@ -5,8 +5,11 @@ import user from '../../assets/data/user.json';
 import fonts from '../../assets/theme/fonts';
 import colors from '../../assets/theme/colors';
 import Button from '../../components/custom/Button';
+import {useNavigation} from '@react-navigation/native';
 
 const ProfileHeader = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.root}>
       <View style={styles.headerRow}>
@@ -38,7 +41,7 @@ const ProfileHeader = () => {
       <View style={styles.buttonContainer}>
         <Button
           text="Edit Profile"
-          onPress={() => console.warn('Edit Button Press')}
+          onPress={() => navigation.navigate('EditProfile')}
         />
         <Button
           text="Contact Me"

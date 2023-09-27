@@ -1,3 +1,4 @@
+// Posts
 export type IUser = {
   id: string;
   name: string;
@@ -35,23 +36,4 @@ export type UserPostType = {
   images?: string[];
   video?: string;
   description: string;
-};
-
-export type RootStackParamList = {
-  Home: undefined;
-  Feed: undefined;
-  UserProfile: {username: string};
-};
-
-export type FeedStackParamList = {
-  Feed: undefined;
-  UserProfile: {username: string};
-};
-
-export type BottomTabParamList = {
-  FeedStack: undefined;
-  Search: undefined;
-  Upload: undefined;
-  Notifications: undefined;
-  MyProfile: undefined;
 };

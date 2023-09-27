@@ -31,6 +31,10 @@ const Post = ({post}: PostPropType): JSX.Element => {
     navigation.navigate('UserProfile', {username: post.user.username});
   };
 
+  const navigateToComment = () => {
+    navigation.navigate('Comments', {postId: post.id});
+  };
+
   const toggleLike = () => {
     setIsLiked(v => !v);
   };
@@ -146,7 +150,7 @@ const Post = ({post}: PostPropType): JSX.Element => {
         {/* Comments */}
         {post.comments.length > 0 ? (
           <>
-            <Text style={styles.greyText}>
+            <Text style={styles.greyText} onPress={navigateToComment}>
               View all {post.nofComments?.toString()} comments
             </Text>
             {/* render frist comment */}
