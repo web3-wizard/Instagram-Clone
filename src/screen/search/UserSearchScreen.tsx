@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import {FlatList} from 'react-native';
 import users from '../../assets/data/users.json';
 import UserListItem from '../../components/search/UserListItem';
 
@@ -11,7 +11,5 @@ const UserSearchScreen = () => {
     />
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default UserSearchScreen;
